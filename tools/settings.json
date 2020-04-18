@@ -1,0 +1,85 @@
+{
+	"builtInScripts": {
+		"spritepacker": false
+	},
+	"windowSize": {
+		"width": 1474,
+		"height": 822
+	},
+	"state": {
+		"globals": {
+			"zoom": 1
+		},
+		"mapEditor": {
+			"x": 160,
+			"y": 20,
+			"open": true,
+			"width": 760,
+			"height": 776,
+			"layers": [
+				{
+					"type": "map",
+					"id": "assets\\maps.json:map"
+				}
+			]
+		},
+		"mapClipboard": {
+			"x": 160,
+			"y": 324,
+			"open": false,
+			"width": 344,
+			"height": 152
+		},
+		"tilesheet": {
+			"x": 960,
+			"y": 100,
+			"open": true
+		},
+		"tileBrush": {
+			"x": 0,
+			"y": 260,
+			"open": true,
+			"width": 152,
+			"height": 216
+		},
+		"palette": {
+			"x": 992,
+			"y": 532,
+			"open": false,
+			"width": 152,
+			"height": 136
+		},
+		"spriter": {
+			"x": 464,
+			"y": 340,
+			"open": false,
+			"zoom": 4
+		},
+		"assets": {
+			"x": 0,
+			"y": 20,
+			"open": true,
+			"width": 152,
+			"height": 216,
+			"assets": {
+				"maps.json": {}
+			}
+		},
+		"console": {
+			"x": 160,
+			"y": 324,
+			"open": false,
+			"width": 456,
+			"height": 152
+		},
+		"settings": {
+			"x": 80,
+			"y": 53,
+			"open": false
+		},
+		"menu": {
+			"devtool": true
+		},
+		"colorPicker": {}
+	}
+}
