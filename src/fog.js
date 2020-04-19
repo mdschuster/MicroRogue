@@ -23,6 +23,12 @@ CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
 OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
+
+import Character from "./character";
+
+/**
+ * Fog Class. Contains data and methods for dealing with the "fog of war" on the map. 
+ */
 export default class Fog {
 
     constructor(fogMap) {
@@ -30,6 +36,10 @@ export default class Fog {
         this.range = 5;
     }
 
+    /**
+     * Removes fog tiles in the area around the player.
+     * @param {Character} player Player character object.
+     */
     updateFog(player) {
         let tileX = player.x / 8;
         let tileY = player.y / 8;

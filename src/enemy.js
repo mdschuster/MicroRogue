@@ -23,6 +23,10 @@ CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
 OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
+
+/**
+ * Class Enemy. Contains the properties and methods for enemy AI.
+ */
 export default class Enemy {
 
     constructor(row, col, player, map) {
@@ -39,11 +43,18 @@ export default class Enemy {
         this.spriteNumber = 20;
     }
 
+    /**
+     * Method to move and draw the enemy object.
+     */
     update() {
         this.move();
         this.draw()
     }
 
+    /**
+     * Decides if the enemy will move or attack, based on relative position between enemy and player.
+     * Updates the appropriate enemy fields.
+     */
     move() {
         let distance = this.computeDistance(this.tile, this.player.tile);
         if (distance > 5) {
@@ -67,6 +78,9 @@ export default class Enemy {
 
     }
 
+    /**
+     * Performs attack.
+     */
     attack() {
         console.log("Enemy attacked player");
     }
@@ -76,6 +90,11 @@ export default class Enemy {
 
 
     //utility functions
+
+    /**
+     * Examines all tiles around the enemy and determines which is cloest to the player.
+     * @returns {Tile} Tile that the enemy will attempt to move to.
+     */
     getTile() {
         let dirs = [];
         dirs[0] = this.map.get(this.col, this.row - 1);  //up
@@ -92,13 +111,29 @@ export default class Enemy {
         return this.shortestDistanceToPlayer(dirs[0], this.shortestDistanceToPlayer(dirs[1], this.shortestDistanceToPlayer(dirs[2], dirs[3])));
 
     }
+    /**
+     * Draws the enemy sprite at its current location.
+     */
     draw() {
         sprite(this.spriteNumber, this.x, this.y)
     }
+
+    /**
+     * Computes euclidean distance between two tiles.
+     * @param {Tile} tile1 First tile.
+     * @param {Tile} tile2 Second tile.
+     * @returns {Tile} Euclidean distance between the two parameters.
+     */
     computeDistance(tile1, tile2) {
         return Math.sqrt((tile1.x - tile2.x) * (tile1.x - tile2.x) + (tile1.y - tile2.y) * (tile1.y - tile2.y));
     }
 
+    /**
+     * Compares two tiles to determine if they have the same x and y coordinate.
+     * @param {Tile} tile1 First tile to compare.
+     * @param {Tile} tile2 Second tile to compare.
+     * @returns {Boolean} True if the tiles have the same coordinates, false otherwise.
+     */
     equals(tile1, tile2) {
         if (tile1 == null || tile2 == null) {
             return false;
@@ -106,6 +141,13 @@ export default class Enemy {
         if (tile1.x == tile2.x && tile1.y == tile2.y) { return true; }
         return false;
     }
+
+    /**
+     * Detmines which of the two input tiles are closest to the player.
+     * @param {Tile} tile1 First tile to consider.
+     * @param {Tile} tile2 Second tile to consider.
+     * @returns {Tile} Reference to the tile that is closer to the player, null if both inputs are null.
+     */
     shortestDistanceToPlayer(tile1, tile2) {
         if (tile1 == null && tile2 == null) {
             return null;

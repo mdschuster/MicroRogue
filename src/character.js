@@ -23,6 +23,10 @@ CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
 OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
+
+/**
+ * Character Class. Contains the data and methods related to the player character.
+ */
 export default class Character {
 
 
@@ -43,6 +47,9 @@ export default class Character {
 
     }
 
+    /**
+     * Updates the sprite to the correct location and locks the movement for "maxCounter" frames.
+     */
     update() {
         this.draw();
         this.counter++;
@@ -55,7 +62,11 @@ export default class Character {
     }
 
 
-
+    /**
+     * Determines if the the player moves or attacks. Updates player data.
+     * @param {string} direction Direction that the player the attempting to move.
+     * @returns {Boolean} True if the player has moved or attacked, false otherwise.
+     */
     move(direction) {
         if (this.isLocked == true) return;
 
@@ -82,7 +93,10 @@ export default class Character {
         return true;
     }
 
-
+    /**
+     * Performs attack action against enemy.
+     * @param {Enemy} enemy 
+     */
     attack(enemy) {
         console.log("Player attacked enemy");
     }
@@ -91,10 +105,20 @@ export default class Character {
 
     //utility functions
 
+    /**
+     * Determines if the input tile is a boundary sprite.
+     * @param {Tile} tile 
+     * @returns {Boolean} True if the tile is a boundary sprite, false otherwise.
+     */
     boundaryCheck(tile) {
         return this.spriteCheck(tile.x, tile.y);
 
     }
+    /**
+     * Determins if the input row and column are boundary sprites.
+     * @param {Integer} xLoc Column in the tile map.
+     * @param {Integer} yLoc Row in the tile map.
+     */
     spriteCheck(xLoc, yLoc) {
         let t = this.map.get(xLoc, yLoc);
         if (t == null || this.boundarySprites.includes(t.sprite)) {
@@ -103,6 +127,11 @@ export default class Character {
             return false;
         }
     }
+    /**
+     * Gets the tile in the input direction.
+     * @param {string} direction Direction to examine for the tile.
+     * @returns {Tile} Tile in the input direction. Null if there is no tile.
+     */
     getTile(direction) {
         let yLoc = this.y;
         let xLoc = this.x;
@@ -131,6 +160,11 @@ export default class Character {
         return this.map.get(col, row);
     }
 
+    /**
+     * Checks if the input tile contains and enemy object.
+     * @param {Tile} tile Tile to examine.
+     * @returns {Enemy} Enemy object if there is an enemy in the tile, null otherwise.
+     */
     enemyCheck(tile) {
         let enemy = null;
         this.enemies.forEach(e => {
@@ -140,6 +174,9 @@ export default class Character {
         });
         return enemy;
     }
+    /**
+     * Draws the sprite in the correct x and y location.
+     */
     draw() {
         sprite(this.spriteNumber, this.x, this.y)
     }

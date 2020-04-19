@@ -23,6 +23,10 @@ CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
 OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
+
+/**
+ * Camera Class. Controls the position of the camera view.
+ */
 export default class Camera {
 
     constructor(target) {
@@ -31,11 +35,11 @@ export default class Camera {
         this.target = target;
         this.SCREENWIDTH = $screen.width;
         this.SCREENHEIGHT = $screen.height;
-
-
     }
 
-
+    /**
+     * Checks the location of the target and adjusts the position of the camera view.
+     */
     update() {
         let relativeX = Math.abs(this.x - this.target.x);
         let relativeY = Math.abs(this.y - this.target.y);
