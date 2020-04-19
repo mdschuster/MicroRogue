@@ -29,26 +29,15 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 export default class Enemy {
 
-    constructor(row, col, player, map) {
-        this.row = row;
-        this.col = col;
-        this.x = col * 8;
-        this.y = row * 8;
-        this.map = map;
-        this.tile = this.map.get(this.col, this.row);
-        this.boundarySprites = [144, 145, 147, 148, 150, 153, 39, 40];
+    constructor() {
 
-
-        this.player = player;
-        this.spriteNumber = 20;
     }
 
     /**
      * Method to move and draw the enemy object.
      */
     update() {
-        this.move();
-        this.draw()
+
     }
 
     /**
@@ -56,25 +45,6 @@ export default class Enemy {
      * Updates the appropriate enemy fields.
      */
     move() {
-        let distance = this.computeDistance(this.tile, this.player.tile);
-        if (distance > 5) {
-            return;
-        }
-        //if the distance to the player is now 1, do that attack.
-        if (distance <= 1) {
-            this.attack();
-            return;
-        }
-        let chosen = this.getTile();
-
-        if (chosen != null) {
-            this.row = chosen.y;
-            this.col = chosen.x;
-            this.x = this.col * 8;
-            this.y = this.row * 8;
-            this.tile = this.map.get(this.col, this.row);
-        }
-
 
     }
 
@@ -82,7 +52,7 @@ export default class Enemy {
      * Performs attack.
      */
     attack() {
-        console.log("Enemy attacked player");
+
     }
 
 
