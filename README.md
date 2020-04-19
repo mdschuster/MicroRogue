@@ -11,7 +11,7 @@ Running and/or building the game is done directly through the game engine.
 
 ## File Organization
 ***Starter Code***  
-Most of the files in this repo are created by the game engine itself. The starter code files are located in src/.
+Most of the files in this repo are created by the game engine itself. The starter code files are located in src/.  
 `main.js:` Main javascript file that contains the update loop for the game.  
 `camera.js:` Camera class that controls the view location of the camera.  
 `character.js:` Character class that contains all the parameters and methods for the player character.  
@@ -25,4 +25,4 @@ There are a couple of other files related to the graphics that are important:
 `assets/palette.png:` Contains the colors used in the tilesheet.  
 
 ***Completed project***  
-The files in `full/` contain the completed Pixelbox.js project for reference.  
+The files in `.full/` contain the completed Pixelbox.js project for reference.  
