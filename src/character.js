@@ -66,7 +66,7 @@ export default class Character {
     /**
      * Determines if the input tile is a boundary sprite.
      * @param {Tile} tile 
-     * @returns {Boolean} True if the tile is a boundary sprite, false otherwise.
+     * @returns {boolean} True if the tile is a boundary sprite, false otherwise.
      */
     boundaryCheck(tile) {
         return this.spriteCheck(tile.x, tile.y);
@@ -74,8 +74,8 @@ export default class Character {
     }
     /**
      * Determins if the input row and column are boundary sprites.
-     * @param {Integer} xLoc Column in the tile map.
-     * @param {Integer} yLoc Row in the tile map.
+     * @param {number} xLoc Column in the tile map.
+     * @param {number} yLoc Row in the tile map.
      */
     spriteCheck(xLoc, yLoc) {
         let t = this.map.get(xLoc, yLoc);
