@@ -62,7 +62,7 @@ export default class Enemy {
     //utility functions
 
     /**
-     * Examines all tiles around the enemy and determines which is cloest to the player.
+     * Examines all tiles around the enemy and determines which is closest to the player.
      * @returns {Tile} Tile that the enemy will attempt to move to.
      */
     getTile() {
