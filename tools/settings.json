@@ -4,7 +4,7 @@
 	},
 	"windowSize": {
 		"width": 1474,
-		"height": 822
+		"height": 806
 	},
 	"state": {
 		"globals": {
@@ -14,8 +14,8 @@
 			"x": 160,
 			"y": 20,
 			"open": true,
-			"width": 760,
-			"height": 776,
+			"width": 744,
+			"height": 760,
 			"layers": [
 				{
 					"type": "map",

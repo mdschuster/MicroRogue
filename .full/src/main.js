@@ -52,15 +52,15 @@ var moved = false;
 // Update is called once per frame
 exports.update = function () {
 
-    if (btn.up) {
+    if (btnp.up) {
         moved = c.move("up");
-    } else if (btn.right) {
+    } else if (btnp.right) {
         moved = c.move("right");
     }
-    else if (btn.down) {
+    else if (btnp.down) {
         moved = c.move("down");
     }
-    else if (btn.left) {
+    else if (btnp.left) {
         moved = c.move("left");
     }
     cls();

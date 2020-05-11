@@ -3,19 +3,19 @@
 		"spritepacker": false
 	},
 	"windowSize": {
-		"width": 1474,
-		"height": 822
+		"width": 1202,
+		"height": 550
 	},
 	"state": {
 		"globals": {
-			"zoom": 1
+			"zoom": 2
 		},
 		"mapEditor": {
 			"x": 160,
 			"y": 20,
 			"open": true,
-			"width": 760,
-			"height": 776,
+			"width": 744,
+			"height": 504,
 			"layers": [
 				{
 					"type": "map",
@@ -31,8 +31,8 @@
 			"height": 152
 		},
 		"tilesheet": {
-			"x": 960,
-			"y": 100,
+			"x": 800,
+			"y": 20,
 			"open": true
 		},
 		"tileBrush": {

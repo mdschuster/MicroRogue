@@ -37,14 +37,9 @@ export default class Character {
         this.row = this.y / 8;
         this.col = this.x / 8;
         this.moveAmount = 8;
-        this.counter = 0;
-        this.maxCounter = 8;
-        this.isLocked = false;
         this.map = map;
         this.boundarySprites = [144, 145, 147, 148, 150, 153, 39, 40];
         this.enemies = enemies;
-
-
     }
 
     /**
@@ -52,15 +47,7 @@ export default class Character {
      */
     update() {
         this.draw();
-        this.counter++;
-        if (this.counter >= this.maxCounter) {
-            this.isLocked = false;
-            this.counter = 0;
-            return;
-        }
-        this.isLocked = true;
     }
-
 
     /**
      * Determines if the the player moves or attacks. Updates player data.
@@ -68,8 +55,6 @@ export default class Character {
      * @returns {Boolean} True if the player has moved or attacked, false otherwise.
      */
     move(direction) {
-        if (this.isLocked == true) return;
-
         let chosen = this.getTile(direction);
         if (chosen == null) {
             return false;

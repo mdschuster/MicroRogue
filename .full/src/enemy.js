@@ -48,7 +48,7 @@ export default class Enemy {
      */
     update() {
         this.move();
-        this.draw()
+        //this.draw()
     }
 
     /**
