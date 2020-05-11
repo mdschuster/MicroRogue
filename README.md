@@ -3,7 +3,7 @@
 MicroRogue is an unfinished clone of Rogue intended as a beginner JavaScript game development workshop.
 
 ## Getting Started  
-The first few slides of the presentation describe the tools and requirements needed to create the game. A brief list is here:  
+The first few slides of the presentation (MicroRogue.pdf) describe the tools and requirements needed to create the game. A brief list is here:  
 * A code editor that can be used to write JavaScript
 * Pixelbox.js game engine: [link](https://pixwlk.itch.io/pixelbox)
 
